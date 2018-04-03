@@ -1,0 +1,33 @@
+{
+    "taskDefinition": {
+        "status": "ACTIVE",
+        "family": "nginx-instance",
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2"
+        ],
+        "volumes": [],
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:653152952980:task-definition/nginx-instance:1",
+        "containerDefinitions": [
+            {
+                "environment": [],
+                "name": "flask-signup",
+                "mountPoints": [],
+                "image": "najar/nginx:v_0",
+                "cpu": 10,
+                "portMappings": [
+                    {
+                        "protocol": "tcp",
+                        "containerPort": 80,
+                        "hostPort": 80
+                    }
+                ],
+                "memory": 256,
+                "essential": true,
+                "volumesFrom": []
+            }
+        ],
+        "revision": 1
+    }
+}
+
