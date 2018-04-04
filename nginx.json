@@ -1,9 +1,9 @@
 {
-    "family": "nginx-instance",
+    "family": "nginx",
     "containerDefinitions": [
         {
-            "image": "najar/nginx:v_0",
-            "name": "flask-signup",
+	    "image": "nginx:v_%BUILD_NUMBER%",
+            "name": "nginx",
             "cpu": 10,
             "memory": 256,
             "essential": true,
