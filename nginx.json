@@ -2,7 +2,7 @@
     "family": "nginx",
     "containerDefinitions": [
         {
-	    "image": "nginx:v_%BUILD_NUMBER%",
+	    "image": "denisdevel/nginx:v_%BUILD_NUMBER%",
             "name": "nginx",
             "cpu": 10,
             "memory": 256,
