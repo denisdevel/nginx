@@ -3,7 +3,7 @@ SERVICE_NAME="nginx-service"
 IMAGE_VERSION="v_"${BUILD_NUMBER}
 TASK_FAMILY="nginx"
 
-# Create a new task definition for this build
+## Create a new task definition for this build
 sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g" nginx.json > nginx-v_${BUILD_NUMBER}.json
 aws ecs register-task-definition --family nginx --cli-input-json file://nginx-v_${BUILD_NUMBER}.json
 
