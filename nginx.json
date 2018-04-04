@@ -2,7 +2,7 @@
     "family": "nginx",
     "containerDefinitions": [
         {
-	    "image": "najar/nginx:v_%BUILD_NUMBER%",
+	    "image": "najar/nginx",
             "name": "nginx",
             "cpu": 10,
             "memory": 256,
