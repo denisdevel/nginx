@@ -6,7 +6,7 @@ MAINTAINER Najar <denis.devel@gmail.com>
 
 EXPOSE 80
 
-RUN apt-get update && apt-get install nginx && apt-get install libnginx-mod-http-lua  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install nginx && apt-get install nginx-extras  && rm -rf /var/lib/apt/lists/*
 
 COPY ./default.conf /etc/nginx/conf.d/
 
