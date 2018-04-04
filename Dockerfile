@@ -6,8 +6,7 @@ MAINTAINER Najar <denis.devel@gmail.com>
 
 EXPOSE 80
 
-WORKDIR /etc/apache2/sites-available
+RUN apt-get update && apt-get install nginx
 
-RUN yum update && \
-    yum install nginx
+
 
