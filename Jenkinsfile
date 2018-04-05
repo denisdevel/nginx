@@ -10,7 +10,7 @@ pipeline {
     
     stage ('Build') {
 	steps { 
-        	sh  'docker build -t najar/nginx'
+        	sh  'docker build -t najar/nginx .'
 		}
 	}
     
