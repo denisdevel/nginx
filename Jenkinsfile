@@ -19,6 +19,7 @@ pipeline {
 	{ 
 	steps {
 		sh 'docker push najar/nginx'
+		sh './docker-machine.sh'
         	}  
    	}
 }
