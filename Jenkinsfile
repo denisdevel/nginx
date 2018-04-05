@@ -1,5 +1,5 @@
 pipeline {
-
+  agent any
   stages {
         stage('Test') {
             steps {
@@ -10,18 +10,15 @@ pipeline {
     
     stage ('Build') {
 	steps { 
-        	def app = docker.build "najar/nginx"
-	}
+        	sh  'docker build -t najar/nginx'
 		}
+	}
     
    
     stage ('Publish')
 	{ 
 	steps {
-
-        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'najar')]) {
-            app.push 'latest'
-			}
+		sh 'docker push najar/nginx'
         	}  
    	}
 }
