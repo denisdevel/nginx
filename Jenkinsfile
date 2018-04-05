@@ -3,7 +3,7 @@ pipeline {
   stages {
         stage('Test') {
             steps {
-    		git 'https://github.com/denisdevel/nginx
+    		git 'https://github.com/denisdevel/nginx'
 		}
 	}
 
