@@ -3,7 +3,7 @@
 /usr/local/bin/docker-machine env opsworks
 eval $(/usr/local/bin/docker-machine env opsworks)
 
-echo " try to remove all running containers"
+echo " try to remove all containers"
 for i in `docker ps -a | sed -e s/\ // | awk '{print $1}'i | sed -n '2,$p'`;do docker rm -f $i; done && 
 
 echo "get last image"
