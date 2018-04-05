@@ -1,26 +1,24 @@
 pipeline {
-  agent any
-  stages {
-        stage('Test') {
-            steps {
-    		git 'https://github.com/denisdevel/nginx'
-		}
-	}
+	agent any
 
-    
-    stage ('Build') {
-	steps { 
-        	sh  'docker build -t najar/nginx .'
+  	stages {
+        	stage('Pull') {
+			steps {
+    				git 'https://github.com/denisdevel/nginx'
+			}
 		}
-	}
+
+    		stage ('Build') {
+			steps { 
+        			sh  'docker build -t najar/nginx .'
+			}	
+		}
     
-   
-    stage ('Publish')
-	{ 
-	steps {
-		sh 'docker push najar/nginx'
-		sh './docker-machine.sh'
-        	}  
-   	}
-}
+		stage ('Publish') {	 
+			steps {
+				sh 'docker push najar/nginx'
+				sh './docker-machine.sh'
+        		}	  
+   		}
+	}
 }
